@@ -104,4 +104,4 @@ if len(host_list) != 0:
 
         #envoi du message
         send_mail("sender@toto.com","recipient@toto.com","Machines VMWare mal configuree(s)",message)
-        
+ 
