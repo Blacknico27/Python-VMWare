@@ -82,7 +82,10 @@ try:
         connection = SmartConnect(host=vcenter_host, user=vcenter_user, pwd=vcenter_password)
         #print('Valid certificate')
 except:
-        connection = SmartConnect(host=vcenter_host, user=vcenter_user, pwd=vcentdatacenter = connection.content.rootFolder.childEntity[0]
+        connection = SmartConnect(host=vcenter_host, user=vcenter_user, pwd=vcenter_password, sslContext=s)
+        #print('Invalid or untrusted certificate')
+   
+datacenter = connection.content.rootFolder.childEntity[0]
 root_folder = datacenter.vmFolder.childEntity
 list_sub_elements(root_folder)
 
@@ -101,5 +104,3 @@ if len(host_list) != 0:
 
         #envoi du message
         send_mail(emetteur,destinataire,"Machines VMWare sans VMWare Tools",message)
-er_password, sslContext=s)
-        #print('Invalid or untrusted certificate')
